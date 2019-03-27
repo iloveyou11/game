@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/bg.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/se.css">
+</head>
+
+<body>
+    <div class="sky">
+        <div class="clouds_one"></div>
+        <div class="clouds_two"></div>
+        <div class="clouds_three"></div>
+    </div>
+    <div class="left-container">
+        <header>
+            <a class="inline theme1" id="newGameBtn" role="button">开始</a>
+            <a class="inline theme1" id="stopGameBtn" role="button">暂停</a>
+            <a class="inline theme1" id="restartGameBtn" role="button">重玩</a>
+            <a class="inline theme1" id="changeGameBtn" role="button">切换游戏</a>
+        </header>
+        <div class="game-container1">
+            <div class="tips">
+                通过键盘上下左右键控制移动方向，祝你玩得开心！
+            </div>
+            <div class="grid-container">
+                <div class="grid-cell" id="grid-cell-0-0"></div>
+                <div class="grid-cell" id="grid-cell-0-1"></div>
+                <div class="grid-cell" id="grid-cell-0-2"></div>
+                <div class="grid-cell" id="grid-cell-0-3"></div>
+                <div class="grid-cell" id="grid-cell-1-0"></div>
+                <div class="grid-cell" id="grid-cell-1-1"></div>
+                <div class="grid-cell" id="grid-cell-1-2"></div>
+                <div class="grid-cell" id="grid-cell-1-3"></div>
+                <div class="grid-cell" id="grid-cell-2-0"></div>
+                <div class="grid-cell" id="grid-cell-2-1"></div>
+                <div class="grid-cell" id="grid-cell-2-2"></div>
+                <div class="grid-cell" id="grid-cell-2-3"></div>
+                <div class="grid-cell" id="grid-cell-3-0"></div>
+                <div class="grid-cell" id="grid-cell-3-1"></div>
+                <div class="grid-cell" id="grid-cell-3-2"></div>
+                <div class="grid-cell" id="grid-cell-3-3"></div>
+            </div>
+            <div class="score">分数：<span id="score">0</span></div>
+        </div>
+        <div class="game-container2">
+            <!-- 加载页面 -->
+            <div class="page hide" id="loading">
+                <div class="loading-txt">加载中...</div>
+            </div>
+            <!-- 首页，选择游戏模式 -->
+            <div class="page" id="index">
+                <div id="help">找出所有色块里颜色不同的一个</div>
+                <div class="btns">
+                    <button data-type="color" class="btn btn-play">看你有多色</button>
+                </div>
+            </div>
+            <!-- 游戏页面 -->
+            <div class="page hide" id="room">
+                <header>
+                    <span class="lv">得分<em>1</em></span>
+                    <span class="time"></span>
+                    <span class="btn btn-pause">暂停</span>
+                </header>
+                <div id="box" class="lv1"></div>
+            </div>
+            <!-- 对话页面 -->
+            <div class="page hide" id="dialog">
+                <div class="inner">
+                    <!-- 游戏结束页面 -->
+                    <div class="content gameover">
+                        <div class="inner-content">
+                            <h3></h3>
+                            <p id="tips">再得<em id="_score"></em>分，就可再打败<em id="_num"></em>万人</p>
+                            <div class="btn-wrap clearfix">
+                                <button id="mode" class="btn btn-play" data-type="color">
+                        普通场
+                    </button>
+                                <button class="btn btn-restart">
+                        重来
+                    </button>
+                            </div>
+                            <a href="http://www.4399.com/" target="_blank" class="btn btn-boyaa">
+                    更多游戏
+            </a>
+                        </div>
+                    </div>
+                    <!-- 游戏暂停页面 -->
+                    <div class="content pause">
+                        <div class="inner-content">
+                            <h3>
+                                游戏暂停
+                            </h3>
+                            <div class="btn-wrap clearfix">
+                                <button class="btn btn-resume">
+                            继续
+                        </button>
+                                <button class="btn btn-restart">
+                            重来
+                        </button>
+                            </div>
+                            <a href="http://www.4399.com/" target="_blank" class="btn btn-boyaa">
+                        更多游戏
+            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right-container">
+        <header>
+            <a class="inline theme2" id="changeTheme" role="button">切换主题</a>
+            <a class="inline theme2" id="changeMusic" role="button">切换音乐</a>
+            <a class="inline theme2" id="changeVideo" role="button">切换视频</a>
+            <a class="inline theme2" id="showLyrics" role="button">查看歌词</a>
+        </header>
+        <div class="video-container">
+            <!-- <audio id="music" controls="controls"></audio><span id="musicName"></span> -->
+            <audio id="music" src="./assets/music/Vk - 樱花樱花想见你.mp3" controls="controls"></audio>
+            <div id="musicName">Vk - 樱花樱花想见你.mp3</div>
+            <video width="600" height="400" controls>
+                <source src="./assets/video/1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/main.js"></script>
+
+<script src="./assets/js/2048/common.js"></script>
+<script src="./assets/js/2048/support.js"></script>
+<script src="./assets/js/2048/animate.js"></script>
+<script src="./assets/js/2048/main.js"></script>
+
+<script src="./assets/js/libs.min.js"></script>
+<script src="./assets/js/underscore.js"></script>
+<script src="./assets/js/se/game.js"></script>
+<script src="./assets/js/se/app.js"></script>
+<script src="./assets/js/se/color.js"></script>
+
+</html>
